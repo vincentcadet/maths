@@ -2,33 +2,78 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Cours MPSI</title>
-    <style> /* ... (le style CSS précédent) ... */ </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathématiques - Vincent Cadet</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f4f7f6;
+            --text: #333;
+        }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); margin: 0; padding: 0; color: var(--text); }
+        
+        /* BARRE DE NAVIGATION */
+        .navbar { background: var(--primary); padding: 12px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .nav-container { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        .nav-logo { color: white; text-decoration: none; font-weight: bold; font-size: 1.2em; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 15px; font-size: 0.9em; padding: 6px 12px; border-radius: 4px; transition: 0.3s; border: 1px solid transparent; }
+        .nav-links a:hover { border-color: var(--accent); background: rgba(52, 152, 219, 0.2); }
+
+        /* CONTENU */
+        .container { width: 95%; max-width: 800px; margin: 30px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        h1 { color: var(--primary); text-align: center; margin-top: 0; }
+        .chapter { margin-top: 25px; }
+        .chapter-title { background: #eef7fe; color: var(--primary); padding: 10px 15px; border-left: 5px solid var(--accent); border-radius: 4px; font-weight: bold; margin-bottom: 10px; }
+        
+        /* LISTE DE DOCUMENTS */
+        .doc-list { list-style: none; padding: 0; margin: 0; }
+        .doc-item { display: flex; justify-content: space-between; align-items: center; padding: 12px; border-bottom: 1px solid #eee; }
+        .doc-item:last-child { border-bottom: none; }
+        .doc-name { font-weight: 500; }
+        
+        /* BOUTONS */
+        .btn-group { display: flex; gap: 8px; }
+        .btn { padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 0.85em; transition: 0.2s; font-weight: bold; }
+        .btn-pdf { background: var(--accent); color: white; }
+        .btn-pdf:hover { background: #2980b9; }
+        .btn-src { background: #eee; color: #666; }
+        .btn-src:hover { background: #ddd; }
+
+        @media (max-width: 500px) {
+            .doc-item { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .btn-group { width: 100%; }
+            .btn { flex: 1; text-align: center; }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <a href="../index.html" style="text-decoration:none;">⬅ Retour à l'accueil</a>
-    <h1>📐 Cours MPSI</h1>
 
-    <div class="chapter">
-        <div class="chapter-title">Documents PDF</div>
-        <ul class="doc-list">
-            <li class="doc-item">
-                <span class="doc-name">Chapitre 1 : Logique</span>
-                <a href="PDF/logique.pdf" class="btn-download" target="_blank">PDF</a>
-            </li>
-        </ul>
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="https://vincentcadet.github.io/maths/" class="nav-logo">🏠 Maths</a>
+        <div class="nav-links">
+            <a href="https://vincentcadet.github.io/maths/CoursMPSI/">Cours</a>
+            <a href="https://vincentcadet.github.io/maths/Exercices/">Exercices</a>
+        </div>
     </div>
+</nav>
 
-    <div class="chapter">
-        <div class="chapter-title">Fichiers Sources (LaTeX/Logiciels)</div>
-        <ul class="doc-list">
+<div class="container">
+    <h1>📝 Notes de cours de mathématiques MPSI</h1> <div class="chapter">
+        <div class="chapter-title">Nom de la Section</div> <ul class="doc-list">
+            
             <li class="doc-item">
-                <span class="doc-name">Source Chapitre 1</span>
-                <a href="sources/logique.tex" class="btn-download">Télécharger .tex</a>
+                <span class="doc-name">Chapitre 01 : Logique</span>
+                <div class="btn-group">
+                    <a href="PDF/logique.pdf" class="btn btn-pdf" target="_blank">PDF</a>
+                    <a href="sources/logique.tex" class="btn btn-src">Source</a>
+                </div>
             </li>
+
         </ul>
     </div>
 </div>
+
 </body>
 </html>
